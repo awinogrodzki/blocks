@@ -1,0 +1,25 @@
+{
+  "name": "@blocks/domain",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "lint": "eslint ./src --ext .ts",
+    "test": "jest ./src --verbose --coverage"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.5",
+    "@types/node": "^17.0.12",
+    "@types/react": "17.0.47",
+    "@types/uuid": "^8.3.4",
+    "eslint": "7.32.0",
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.5.3"
+  }
+}

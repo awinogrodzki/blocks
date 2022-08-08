@@ -1,0 +1,23 @@
+{
+  "name": "@blocks/api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint ./src --ext .ts"
+  },
+  "dependencies": {
+    "@blocks/domain": "*",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.12",
+    "@types/react": "17.0.47",
+    "eslint": "7.32.0",
+    "typescript": "^4.5.3"
+  }
+}
