@@ -3,7 +3,6 @@ import {
   BlockRepository,
   deleteBlocks,
   duplicateBlock,
-  findBlock,
   insertBlocks,
   moveBlock,
 } from "@blocks/domain";
@@ -16,15 +15,15 @@ export class InMemoryBlockRepository implements BlockRepository {
   }
 
   public async insert(blocks: Block[]) {
-    this.blocks = insertBlocks(this.blocks, blocks);
+    return (this.blocks = insertBlocks(this.blocks, blocks));
   }
 
   public async delete(blockIds: string[]) {
-    this.blocks = deleteBlocks(this.blocks, blockIds);
+    return (this.blocks = deleteBlocks(this.blocks, blockIds));
   }
 
   public async duplicate(blockId: string) {
-    this.blocks = duplicateBlock(this.blocks, blockId);
+    return (this.blocks = duplicateBlock(this.blocks, blockId));
   }
 
   public async move(
@@ -32,12 +31,11 @@ export class InMemoryBlockRepository implements BlockRepository {
     targetIndex: number,
     parentId: string | null
   ) {
-    const block = findBlock(this.blocks, blockId);
-
-    if (!block) {
-      return;
-    }
-
-    this.blocks = moveBlock(this.blocks, block, targetIndex, parentId);
+    return (this.blocks = moveBlock(
+      this.blocks,
+      blockId,
+      targetIndex,
+      parentId
+    ));
   }
 }

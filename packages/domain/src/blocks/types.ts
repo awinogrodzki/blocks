@@ -6,12 +6,12 @@ export interface Block {
 
 export interface BlockRepository {
   getAll: () => Promise<Block[]>;
-  insert: (blocks: Block[]) => Promise<void>;
-  delete: (blockIds: string[]) => Promise<void>;
-  duplicate: (blockId: string) => Promise<void>;
+  insert: (blocks: Block[]) => Promise<Block[]>;
+  delete: (blockIds: string[]) => Promise<Block[]>;
+  duplicate: (blockId: string) => Promise<Block[]>;
   move: (
     blockId: string,
     targetIndex: number,
     parentId: string | null
-  ) => Promise<void>;
+  ) => Promise<Block[]>;
 }

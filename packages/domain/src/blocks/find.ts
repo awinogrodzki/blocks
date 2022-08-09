@@ -16,3 +16,15 @@ export const findBlock = (blocks: Block[], blockId: string): Block | null => {
     blockId
   );
 };
+
+export const hasBlock = (blocks: Block[], blockId: string): boolean => {
+  if (!blocks.length) {
+    return false;
+  }
+
+  if (blocks.some((block) => block.id === blockId)) {
+    return true;
+  }
+
+  return blocks.some((block) => hasBlock(block.blocks, blockId));
+};
