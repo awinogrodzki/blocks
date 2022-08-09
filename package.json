@@ -13,6 +13,9 @@
     "test": "turbo run test"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint-config-prettier": "^8.3.0",
     "prettier": "latest",
     "turbo": "latest"
   },
@@ -20,6 +23,5 @@
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "npm@8.1.0"
 }
