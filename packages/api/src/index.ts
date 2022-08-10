@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { InMemoryBlockRepository } from "./infrastructure/blocks/InMemoryBlockRepository";
 import { parseInsertBody } from "./validation/insert";
 import { parseDeleteBody } from "./validation/delete";
@@ -7,9 +8,9 @@ import { errorHandler } from "./errors";
 import { BlockRepository } from "@blocks/domain";
 
 const app = express();
-
 const repository: BlockRepository = new InMemoryBlockRepository([]);
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/api/blocks", async function (req, res, next) {
@@ -57,6 +58,6 @@ app.post("/api/blocks/:id/move", async function (req, res, next) {
 
 app.use(errorHandler);
 
-app.listen(3000, () => {
-  console.log(`> API ready on http://localhost:3000`);
+app.listen(8080, () => {
+  console.log(`> API ready on http://localhost:8080`);
 });

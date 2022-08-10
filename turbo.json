@@ -7,14 +7,12 @@
     },
     "test": {
       "outputs": [],
-      "inputs": [
-        "src/**/*.tsx",
-        "src/**/*.ts"
-      ]
+      "inputs": ["src/**/*.tsx", "src/**/*.ts"]
     },
     "lint": {
       "outputs": []
     },
+    "start": {},
     "dev": {
       "cache": false
     }

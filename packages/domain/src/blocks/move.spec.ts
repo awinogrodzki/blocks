@@ -71,6 +71,23 @@ describe("move", () => {
     ]);
   });
 
+  it("moves block from root to a subblocks subblock", () => {
+    const blocks = [
+      createBlock("block-1", "content-1", [
+        createBlock("block-2", "content-2"),
+      ]),
+      createBlock("block-3", "content-3"),
+    ];
+
+    expect(moveBlock(blocks, "block-3", 0, "block-2")).toEqual([
+      createBlock("block-1", "content-1", [
+        createBlock("block-2", "content-2", [
+          createBlock("block-3", "content-3"),
+        ]),
+      ]),
+    ]);
+  });
+
   it("throws not found error if block that should be moved does not exist", () => {
     const blocks = [
       createBlock("block-1", "content-1"),

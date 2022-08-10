@@ -43,9 +43,9 @@ const moveBlockRecursive = (
     ];
   }
 
-  return blocks.map((block) => ({
-    ...block,
-    blocks: moveBlockRecursive(block.blocks, block, targetIndex, parentId),
+  return newBlocks.map((subblock) => ({
+    ...subblock,
+    blocks: moveBlockRecursive(subblock.blocks, block, targetIndex, parentId),
   }));
 };
 
